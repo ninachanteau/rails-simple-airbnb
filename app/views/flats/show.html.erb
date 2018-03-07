@@ -1,0 +1,57 @@
+<div class="navbar-wagon">
+  <%= link_to 'Simple Airbnb', flats_path, class: "navbar-logo" %>
+  <div class="navbar-right">
+  <%= link_to "Add flat", new_flat_path, class: "btn btn-primary" %></div>
+  </div>
+</div>
+
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= @flat.picture %>);">
+</div>
+<div class="container margin-negative">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8">
+        <div class="info-container">
+          <div class="flat-info">
+            <h2><%= @flat.name %></h2>
+            <p><%= @flat.address %></p>
+          </div>
+          <div class="flat-info">
+            <h3>A bit more about this flat...</h3>
+            <p><%= @flat.description %></p>
+            <div class="map">
+              <%= image_tag "https://maps.googleapis.com/maps/api/staticmap?center=#{@flat.address}&size=650x250&markers=address:#{@flat.address}" %>
+            </div>
+          </div>
+          <div class="flat-info">
+            <h3>Details</h3>
+            <p><i class="fas fa-users"></i> <%= @flat.number_of_guests %>  <i class="fas fa-euro-sign"></i> <%= @flat.price_per_night %></p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="action-container">
+          <div class="flat-info">
+            <h4>Book this place!</h4>
+            <form action="" class="form-group">
+              <label for="arrival">From:</label>
+              <input type="date" name="arrival" class="form-control">
+              <label for="departure">To:</label>
+              <input type="date" name="departure" class="form-control">
+              <input type="submit" class="btn btn-success margin-top" value="Book" style="width: 100%">
+            </form>
+          </div>
+          <div class="flat-info share">
+            <p>Share</p>
+            <div>
+              <a href=""><i class="fab fa-facebook-square"></i></a>
+              <a href=""><i class="fab fa-twitter-square"></i></a>
+              <a href=""><i class="fab fa-pinterest-square"></i></a>
+              <a href=""><i class="fas fa-envelope-square"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
